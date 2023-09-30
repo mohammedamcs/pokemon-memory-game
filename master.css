@@ -1,0 +1,247 @@
+/* Start Global Variables  */
+:root {
+    --main-color: #2b3452;
+    --red-color: #F45050;
+}
+
+/* End Global Variables  */
+
+
+/* Start Global Rules  */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 60px;
+    letter-spacing: 1px;
+    color: #F45050;
+    text-align: center;
+}
+
+.game-wrapper {
+    margin: 10px auto;
+    background-color: #fff;
+    width: 60%;
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+}
+
+.card img {
+    width: 100%;
+}
+
+
+.block-click {
+    pointer-events: none;
+}
+
+
+/* End Global Rules  */
+
+
+/* Start Rules Styling  */
+.rules {
+    margin: 10px auto;
+    background-color: #fff;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.rules h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.rules .rules-list .rule {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.rules .rules-list .rule>select {
+    width: 140px;
+    border: 2px solid var(--red-color);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    margin-left: 5px;
+}
+
+.rules .button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.rules .button button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid var(--red-color);
+    outline: none;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.rules .button button:hover {
+    background-color: var(--red-color);
+    color: #fff;
+}
+
+/* End Rules Styling  */
+
+/* Start game board Styling  */
+
+
+.game .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.game .info>div {
+    background-color: var(--red-color);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.game .info>div>span {
+    color: #fff;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game .board {
+    margin: 10px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.game .board #restart-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid var(--red-color);
+    outline: none;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    display: none;
+}
+
+.game .board #restart-btn:hover {
+    background-color: var(--red-color);
+    color: #fff;
+}
+
+.game .board .card {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.game .board .card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #F45050;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.game .board .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.game .board .card.flip {
+    transform: rotateY(180deg);
+}
+
+
+/* End game board Styling  */
+
+@media (max-width:768px) {
+   
+    header h1 {
+        font-size: 40px;
+    }
+
+  
+    .game .info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game .board .card {
+        width: 45px;
+        height: 45px;
+
+    }
+
+    .game .board .card .front {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width:1199px) {
+    .game-wrapper {
+        width: 95%;
+    }
+
+    
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="./master.css">
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="coitainer">
+        <header>
+            <h1>Pokemon Memory Game</h1>
+        </header>
+
+        <div class="rules">
+            <h1>Welcome</h1>
+            <div class="rules-list">
+                <div class="rule">1. Once the time runs out, the game will stop.</div>
+                <div class="rule">2. You can't exit from the game while you're playing.</div>
+                <div class="rule">3. You will get points on the basis of your number of moves.</div>
+                <div class="rule">
+                    <label for="board-size">4. You can choose a board size:</label>
+                    <select name="board-size" id="board-size">
+                        <option value="20" selected> 20 Cards</option>
+                        <option value="24"> 24 Cards</option>
+                        <option value="28"> 28 Cards</option>
+                        <option value="32"> 32 Cards</option>
+                    </select>
+                </div>
+                <div class="rule">
+                    <label for="play-time">5. You can choose time to solve the board: </label>
+                    <select name="play-time" id="play-time">
+                        <option value="30"> 30 Seconds</option>
+                        <option value="60" selected> 60 Seconds</option>
+                        <option value="90"> 90 Seconds</option>
+                        <option value="120"> 120 Seconds</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button">
+                <button id="start-btn">Start Game</button>
+            </div>
+        </div>
+
+        <div class="game-wrapper">
+            <div class="game">
+                <div class="info">
+                    <div class="moves">Moves:<span>0</span></div>
+                    <div class="timer">Time Left: <span>00:00</span></div>
+                </div>
+                <div class="board">
+                    <button id="restart-btn">Restart Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./game.js"></script>
+</body>
+
+</html>
